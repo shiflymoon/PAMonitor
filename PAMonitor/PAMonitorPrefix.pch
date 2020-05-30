@@ -1,0 +1,22 @@
+//
+//  PAMonitorPrefix.pch
+//  PAMonitor
+//
+//  Created by 史贵岭 on 2019/4/22.
+//  Copyright © 2019年 史贵岭. All rights reserved.
+//
+
+#ifndef PAMonitorPrefix_pch
+#define PAMonitorPrefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef DEBUG
+# define PALog(fmt, ...) NSLog((@"[路径:%s]\n" "[函数名:%s]\n" "[行号:%d] \n" fmt), [[NSString stringWithFormat:@"%s", __FILE__].lastPathComponent UTF8String], __FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+//# define GALLog(fmt,...) NSLog(@"" fmt);
+# define PALog(...);
+#endif
+
+#endif /* PAMonitorPrefix_pch */
